@@ -1,0 +1,16 @@
+# IDE
+.idea
+.iml
+.conf
+
+# Java
+target
+
+# Selenide
+build
+
+# Gradle
+.gradle
+.settings
+.project
+.classpath

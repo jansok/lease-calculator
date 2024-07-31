@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+compileTestJava.options.encoding = "UTF-8"
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'com.codeborne', name: 'selenide', version:'5.15.1'
+    testImplementation 'io.rest-assured:rest-assured:4.3.1'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.16.1'
+    // JUnit 5
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.3'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.3'
+}
+
+test {
+    useJUnitPlatform()
+
+    testLogging {
+        showStandardStreams = true // output test log to console
+        events "passed", "skipped", "failed" // deny output test log to console
+    }
+}
